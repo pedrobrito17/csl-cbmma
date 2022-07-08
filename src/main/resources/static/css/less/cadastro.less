@@ -1,0 +1,62 @@
+@import 'padrao';
+
+/* Cadastro */
+body {
+    background-color: #f9f9f9;
+}
+
+.color-nav {
+    background-color: lighten(#e60014, 10%);
+}
+
+.nav-topo {
+    height         : 80px;
+    display        : flex;
+    justify-content: center;
+    align-content  : center;
+    flex-direction : column;
+}
+
+main{
+    display: block;
+    margin-top: 43px;
+}
+
+.campo-obrigatorio{
+    height: 30px;
+}
+
+footer {
+    border-top      : 1px solid #d8dee2;
+    background-color: white;
+    width           : 100%;
+    min-height          : 50px;
+
+    @media only screen and (min-height: 900px) {
+        position: absolute;
+        bottom: 0px;
+    }
+
+    @media only screen and (max-height: 899px) {
+        margin-top: 50px;
+        position: static;
+    }
+}
+
+footer .footer-cad{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+footer .footer-cad p{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Coordenadoria de Serviços Odontológicos do CBMMA</title>
+    <link rel="icon" type="imagem/png" href="" />
+    <!-- CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen">
+    <link th:href="@{/css/cadastro.css}" rel="stylesheet" media="screen">
+
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid color-nav">
+            <div class="container">
+                <nav class="nav-topo">
+                    <h4 class="text-white float-left txt-logo">SISTEMA DE CONTROLE DOS SERVIÇOS ODONTOLÓGICOS DO CBMMA</h4>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-8 offset-md-2">
+                    <h4>Complete o formulário</h4>
+                    <form class="my-box mt-3" id="form-cadastro" th:method="POST" th:action="@{/cadastrar-novo-bombeiro}" th:object="${bombeiro}">
+                        <div class="campo-obrigatorio">
+                            <p class="float-right"><span class="text-danger">*</span> Campos obrigatórios</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="nomeCompleto"><span class="text-danger">*</span> Nome completo</label>
+                            <input type="text" class="form-control"  th:field="*{nomeCompleto}" 
+                                placeholder="Ex: Jorge Miranda de Brito">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="idFuncional"><span class="text-danger">*</span> Número da identidade
+                                        funcional</label>
+                                    <input type="text" th:field="*{numIdFuncional}" class="form-control"
+                                        placeholder="Ex: 2189 (apenas 4 dígitos)">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="matricula"><span class="text-danger">*</span> Matrícula</label>
+                                    <input type="text" th:field="*{matricula}" class="form-control"
+                                        placeholder="Ex: 419278-0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="cargo"><span class="text-danger">*</span> Cargo</label>
+                                    <select id="cargo" th:field="*{cargo}" class="form-control">
+                                        <option value="Soldado">Soldado</option>
+                                        <option value="Cabo">Cabo</option>
+                                        <option value="3º Sargento">3º Sargento</option>
+                                        <option value="2º Sargento">2º Sargento</option>
+                                        <option value="1º Sargento">1º Sargento</option>
+                                        <option value="Subtenente">Subtenente</option>
+                                        <option value="Cadete">Cadete</option>
+                                        <option value="Aspirante a Oficial">Aspirante a Oficial</option>
+                                        <option value="2º Tenente">2º Tenente</option>
+                                        <option value="1º Tenente">1º Tenente</option>
+                                        <option value="Capitão">Capitão</option>
+                                        <option value="Major">Major</option>
+                                        <option value="Tenente Coronel">Tenente Coronel</option>
+                                        <option value="Coronel">Coronel</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="quadro"><span class="text-danger">*</span> Quadro</label>
+                                    <select th:field="*{quadro}" class="form-control">
+                                        <option value="QPBM">QPBM</option>
+                                        <option value="QOCBM">QOCBM</option>
+                                        <option value="QOABM">QOABM</option>
+                                        <option value="QOEBM">QOEBM</option>
+                                        <option value="QOSBM">QOSBM</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="nomeGuerra"><span class="text-danger">*</span> Nome de guerra</label>
+                                    <input type="text" th:field="*{nomeGuerra}" class="form-control"
+                                        placeholder="Ex: J. Miranda">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="localTrabalho"><span class="text-danger">*</span> Local de
+                                        trabalho</label>
+                                    <select class="form-control" th:field="*{localTrabalho}">
+                                        <option value="Gabinete do comando">Gabinete do comando</option>
+                                        <option value="2bbm">2º Batalhão de Bombeiros Militar</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="celular"><span class="text-danger">*</span> Celular</label>
+                            <input type="text" th:field="*{celular}" class="form-control" placeholder="Ex: (98) 98200-5459">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="email"><span class="text-danger">*</span> E-mail</label>
+                                    <input type="email" th:field="*{email}" class="form-control email"
+                                        placeholder="Ex: jorge@gmail.com">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="confEmail"><span class="text-danger">*</span> Confirmação de
+                                        e-mail</label>
+                                    <input type="email" id="confEmail" name="confEmail" class="form-control" placeholder="Ex: jorge@gmail.com">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="senha"><span class="text-danger">*</span> Senha</label>
+                                    <input type="password" th:field="*{senha}" class="form-control" placeholder="********">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="confSenha"><span class="text-danger">*</span> Confirmação de
+                                        senha</label>
+                                    <input type="password" id="confSenha" name="confSenha" class="form-control"
+                                        placeholder="********">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn my-button btn-block mt-2 mb-2">Cadastrar</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 footer-cad">
+                    <p class="p-min">Dúvidas e sugestões? <a href="#">Entre em contato</a></p>
+                </div>
+                <div class="col-6 footer-cad">
+                    <p class="position-absolute p-min" style="right:0px;">desenvolvido por <a
+                            href="http://www.italobrito.com.br" target="_blank">italobrito.com.br</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/js/jquery.mask.min.js}"></script>
+    <script th:src="@{/js/additional-methods.min.js}"></script>
+    <script th:src="@{/js/jquery.validate.min.js}"></script>
+    <script th:src="@{/js/form-validation.js}"></script>
+
+</body>
+
+</html>

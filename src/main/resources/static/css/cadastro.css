@@ -1,0 +1,109 @@
+/** Atributos gerais **/
+@font-face {
+  font-family: Fira Sans;
+  src: url('font/FiraSans-Regular.ttf');
+}
+/** Geral **/
+html {
+  font-size: 90%;
+}
+body {
+  color: #1a1a1a;
+  font-family: 'Fira Sans', sans-serif;
+}
+html,
+body {
+  height: 100%;
+}
+a {
+  color: #245ec5;
+}
+a:focus,
+a:hover {
+  color: #5587e0;
+}
+input:focus,
+select:focus {
+  border-color: #5587e0 !important;
+  box-shadow: 0px 0px 0px white !important;
+}
+.color-white,
+.my-button:focus,
+.my-button:hover,
+.my-button,
+.txt-logo {
+  color: white;
+}
+.my-button:focus,
+.my-button:hover {
+  background-color: #245ec5;
+}
+.my-button {
+  background-color: #5587e0;
+}
+.p-min {
+  font-size: .9em;
+}
+.my-box {
+  background-color: white;
+  border: 1px solid #d8dee2;
+  padding: 24px 40px;
+  border-radius: 3px;
+  box-shadow: rgba(153, 153, 153, 0.2) 0px 2px 4px 0px;
+}
+.txt-logo {
+  font-weight: 600;
+  text-shadow: #666 1px 1px 0, 2px 2px 2px rgba(255, 255, 255, 0);
+  margin: 0px;
+}
+/* Cadastro */
+body {
+  background-color: #f9f9f9;
+}
+.color-nav {
+  background-color: #ff1a2e;
+}
+.nav-topo {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+main {
+  display: block;
+  margin-top: 43px;
+}
+.campo-obrigatorio {
+  height: 30px;
+}
+footer {
+  border-top: 1px solid #d8dee2;
+  background-color: white;
+  width: 100%;
+  min-height: 50px;
+}
+@media only screen and (min-height: 900px) {
+  footer {
+    position: absolute;
+    /* margin-top: 100px; */
+    bottom: 0px;
+  }
+}
+@media only screen and (max-height: 899px) {
+  footer {
+    margin-top: 50px;
+    position: static;
+  }
+}
+footer .footer-cad {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+footer .footer-cad p {
+  margin: 0px;
+  padding: 0px;
+}

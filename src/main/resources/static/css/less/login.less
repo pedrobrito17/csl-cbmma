@@ -1,0 +1,30 @@
+@import 'padrao';
+
+/* Login */
+body {
+    background-color: #f9f9f9;
+    display: flex;
+    margin: auto;
+
+    @media only screen and (max-width: 600px) {
+        padding: 20px;
+    }
+}
+
+.my-container-login{
+    margin: auto;
+}
+
+.links {
+    border-radius: 3px;
+    border       : 1px solid #d8dee2;
+    padding: 15px 50px;
+
+    a{
+        color: darken(#333, 10%);
+    }
+
+    a:focus, a:hover {
+        color: #333;
+    }
+}
