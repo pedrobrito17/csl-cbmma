@@ -1,6 +1,7 @@
 package br.gov.ma.ssp.cbm.csl.controller;
 
 import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import br.gov.ma.ssp.cbm.csl.model.BombeiroMilitar;
 import br.gov.ma.ssp.cbm.csl.service.BombeiroMilitarService;
 
@@ -28,16 +31,18 @@ public class SistemaController{
     }
 
     @PostMapping(value="/csl-unidade/atualizar-dados")
-    public ModelAndView postAtualizarDados(@ModelAttribute("bombeiro") BombeiroMilitar bombeiro) {
+    public ModelAndView postAtualizarDados(@ModelAttribute("bombeiro") BombeiroMilitar bombeiro, RedirectAttributes redirectAttributes) {
         bombeiro = bombeiroService.atualizarDados(bombeiro);
         ModelAndView mv = new ModelAndView("redirect:/");
+        redirectAttributes.addFlashAttribute("msgSuccess", "Dados alterados com sucesso.");
         return mv;
     }    
     
     @PostMapping(value="/csl-unidade/atualizar-senha")
-    public ModelAndView postAtualizarSenha(@ModelAttribute("bombeiro") BombeiroMilitar bombeiro) {
+    public ModelAndView postAtualizarSenha(@ModelAttribute("bombeiro") BombeiroMilitar bombeiro, RedirectAttributes redirectAttributes) {
         bombeiro = bombeiroService.atualizarSenha(bombeiro);
         ModelAndView mv = new ModelAndView("redirect:/");
+        redirectAttributes.addFlashAttribute("msgSuccess", "Senha alterada com sucesso.");
         return mv;
     }
     
