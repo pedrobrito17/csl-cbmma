@@ -1,6 +1,7 @@
 $(function(){
     var titulo = $('#titulo-page').html();
     var titulosArray = {
+        "": "home",
         "MEUS DADOS": "meus-dados",
         "ALTERAR SENHA": "alterar-senha",
         "USUÁRIOS CADASTRADOS": "usuarios-cadastrados",

@@ -35,9 +35,8 @@
                     <div class="my-box">
                         <i class="fas fa-check-circle text-success fa-3x mb-3"></i>
                         <h4 class="mb-2">Cadastro realizado</h4>
-                        <p>Enviamos um e-mail para sua caixa de entrada. Clique no link em anexo para confirmar seu
-                            cadastro.</p>
-                        <a href="index.html" class="btn my-button">Retornar</a>
+                        <p>Entre em contato com o Tenente-Coronel Alonso para liberar seu acesso.</p>
+                        <a th:href="@{/}" class="btn my-button">Retornar</a>
                     </div>
                 </div>
             </div>
@@ -48,7 +47,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-6 footer-cad">
-                    <p class="p-min">Dúvidas e sugestões? <a href="#">Entre em contato</a></p>
+                    <p class="p-min">Dúvidas e sugestões? <a href="#" data-toggle="modal" data-target="#modalContatoCenter">Entre em contato</a></p>
                 </div>
                 <div class="col-6 footer-cad">
                     <p class="position-absolute p-min" style="right:0px;">Desenvolvido pelo Departamento de Tecnologia da Informação/DPM - Capitão Aragão</p>
@@ -56,6 +55,27 @@
             </div>
         </div>
     </footer>
+
+      <!-- Modal -->
+  <div class="modal fade" id="modalContatoCenter" tabindex="-1" role="dialog" aria-labelledby="modalContatoCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalContatoLongTitle">Entre em contato</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Para dúvidas e sugestões entre em contato com o Capitão Aragão.<br>
+          Contato: (98) 98204-5453 / aragao@cbm.ma.gov.br
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.mask.min.js"></script>

@@ -29,14 +29,14 @@ public class SistemaController{
 
     @PostMapping(value="/csl-unidade/atualizar-dados")
     public ModelAndView postAtualizarDados(@ModelAttribute("bombeiro") BombeiroMilitar bombeiro) {
-        bombeiroService.atualizarDados(bombeiro);
+        bombeiro = bombeiroService.atualizarDados(bombeiro);
         ModelAndView mv = new ModelAndView("redirect:/");
         return mv;
     }    
     
     @PostMapping(value="/csl-unidade/atualizar-senha")
     public ModelAndView postAtualizarSenha(@ModelAttribute("bombeiro") BombeiroMilitar bombeiro) {
-        bombeiroService.atualizarDados(bombeiro);
+        bombeiro = bombeiroService.atualizarSenha(bombeiro);
         ModelAndView mv = new ModelAndView("redirect:/");
         return mv;
     }

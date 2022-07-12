@@ -10,7 +10,7 @@
 
         <h2 id="titulo-page" class="mb-4">MEUS DADOS</h2>
 
-        <form class="mt-3" id="form-cadastro" th:method="POST" th:action="@{/atualizar-dados}" th:object="${bombeiro}">
+        <form class="mt-3" id="form-cadastro" th:method="POST" th:action="@{/csl-unidade/atualizar-dados}" th:object="${bombeiro}">
             <div class="campo-obrigatorio">
                 <p class="float-right"><span class="text-danger">*</span> Campos obrigatórios</p>
             </div>
@@ -113,6 +113,7 @@
 
             <input type="text" th:field="*{senha}" hidden>
             <input type="text" th:field="*{id}" hidden>
+            <input type="text" th:field="*{roles}" hidden>
 
             <button type="submit" class="btn my-button btn-block mt-2 mb-2">Atualizar</button>
 

@@ -43,9 +43,9 @@
                 </div>
                 <div class="col-sm-12 col-lg-6">
                     <form id="form-login" th:action="@{/login}" th:method="POST">
-                        <input type="text" name="username" autofocus autocomplete="on" class="form-control mb-2" placeholder="ID">
-                        <input type="password" name="password" class="form-control mb-1" placeholder="Senha">
-                        <a href="#" class="mb-4">Esqueci a senha</a>
+                        <input type="text" name="username" autofocus autocomplete="on" class="form-control mb-2" placeholder="ID" value="419271-0">
+                        <input type="password" name="password" class="form-control mb-1" placeholder="Senha" value="fsadu1788">
+                        <a href="#" class="mb-4" data-toggle="modal" data-target="#modalContatoCenter">Esqueci a senha</a>
                         <button type="submit" class="btn my-button btn-block mt-2">ENTRAR</button>
                     </form>
                 </div>
@@ -109,6 +109,27 @@
             });
         });
     </script>
+
+      <!-- Modal -->
+  <div class="modal fade" id="modalContatoCenter" tabindex="-1" role="dialog" aria-labelledby="modalContatoCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalContatoLongTitle">Esqueci a senha</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Para alteração de senha entre em contato com o Tenente-Coronel Alonso.<br>
+          Contato: (98) 98866-4250
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 
