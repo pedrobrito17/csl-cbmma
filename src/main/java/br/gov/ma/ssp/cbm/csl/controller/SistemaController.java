@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import br.gov.ma.ssp.cbm.csl.model.BombeiroMilitar;
 import br.gov.ma.ssp.cbm.csl.service.BombeiroMilitarService;
 
@@ -26,7 +25,7 @@ public class SistemaController{
     @RequestMapping(value="/csl-unidade/meus-dados", method=RequestMethod.GET)
     public ModelAndView pageMeusDados() {
         ModelAndView mv = new ModelAndView("/meus-dados");
-        mv.addObject("bombeiro", bombeiro);
+        mv.addObject("bombeiro", bombeiroService.getBombeiroLogado());
         return mv;
     }
 
@@ -40,7 +39,7 @@ public class SistemaController{
     
     @PostMapping(value="/csl-unidade/atualizar-senha")
     public ModelAndView postAtualizarSenha(@ModelAttribute("bombeiro") BombeiroMilitar bombeiro, RedirectAttributes redirectAttributes) {
-        bombeiro = bombeiroService.atualizarSenha(bombeiro);
+        bombeiroService.atualizarSenha(bombeiro);
         ModelAndView mv = new ModelAndView("redirect:/");
         redirectAttributes.addFlashAttribute("msgSuccess", "Senha alterada com sucesso.");
         return mv;

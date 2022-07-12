@@ -1,17 +1,17 @@
 package br.gov.ma.ssp.cbm.csl.model;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -66,9 +66,9 @@ public class BombeiroMilitar {
     @Column
     private int ativo = 1;
 
-    @OneToMany(fetch=FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinTable(name = "bombeiro_role", joinColumns = @JoinColumn(name = "bombeiro_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private List<Role> roles = new ArrayList<Role>();
+    private Set<Role> roles;
 
     public int getId() {
         return this.id;
@@ -166,11 +166,11 @@ public class BombeiroMilitar {
         this.ativo = ativo;
     }
 
-    public List<Role> getRoles() {
+    public Set<Role> getRoles() {
         return this.roles;
     }
 
-    public void setRoles(List<Role> roles) {
+    public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
 

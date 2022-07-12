@@ -1,5 +1,7 @@
 package br.gov.ma.ssp.cbm.csl.service;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
@@ -9,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 import br.gov.ma.ssp.cbm.csl.model.BombeiroMilitar;
+import br.gov.ma.ssp.cbm.csl.model.Role;
 import br.gov.ma.ssp.cbm.csl.repository.BombeiroMilitarRepository;
 import br.gov.ma.ssp.cbm.csl.repository.RoleRepository;
 
@@ -26,7 +29,8 @@ public class BombeiroMilitarService{
 
     public void salvarNovoUsuario(BombeiroMilitar bombeiro){
         bombeiro.setSenha(bCryptPasswordEncoder.encode(bombeiro.getSenha()));
-        bombeiro.setRoles(roleRepository.findByRole("CSL_UNIDADE"));
+        Role bombeiroRole = roleRepository.findByRole("CSL_UNIDADE");
+        bombeiro.setRoles(new HashSet<Role>(Arrays.asList(bombeiroRole)));
         bombeiroRepository.save(bombeiro);
     }
 
