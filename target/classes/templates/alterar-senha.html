@@ -10,17 +10,19 @@
 
         <h2 id="titulo-page" class="mb-4">ALTERAR SENHA</h2>
 
-        <form class="mt-3" id="form-cadastro" th:method="POST" th:action="@{/atualizar-dados}" th:object="${bombeiro}">
+        <form class="mt-3" id="form-cadastro" th:method="POST" th:action="@{/csl-unidade/atualizar-senha}" th:object="${bombeiro}">
 
             <input type="text" th:field="*{id}" hidden>
             <input type="text" th:field="*{nomeCompleto}" hidden>
             <input type="text" th:field="*{numIdFuncional}" hidden>
             <input type="text" th:field="*{matricula}" hidden>
             <input type="text" th:field="*{cargo}" hidden>
+            <input type="text" th:field="*{localTrabalho}" hidden>
             <input type="text" th:field="*{quadro}" hidden>
             <input type="text" th:field="*{nomeGuerra}" hidden>
             <input type="text" th:field="*{celular}" hidden>
             <input type="text" th:field="*{email}" hidden>
+            <input type="text" th:field="*{ativo}" hidden>
 
             <div class="row">
                 <div class="col-sm-12 col-md-6">

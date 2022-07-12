@@ -1,10 +1,16 @@
 $(function(){
     var titulo = $('#titulo-page').html();
     var titulosArray = {
-        "MARCAÇÃO DE CONSULTA": "marcacao-consulta",
         "MEUS DADOS": "meus-dados",
         "ALTERAR SENHA": "alterar-senha",
-        "MINHAS CONSULTAS": "minhas-consultas"
+        "USUÁRIOS CADASTRADOS": "usuarios-cadastrados",
+        "PROCEDIMENTO": "procedimento",
+        "RESULTADO": "resultado",
+        "ATA REGISTRO": "ata_registro",
+        "CADASTRO ÓRGÃO": "cadastro_orgao",
+        "CADASTRO CLIENTE": "cadastro_cliente",
+        "CONTRATO": "contrato",
+        "SANÇÃO": "sancao"
     };
 
     $('#'+titulosArray[titulo]).addClass('menu-selecionado');

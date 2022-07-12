@@ -24,7 +24,7 @@
         </div>
 
         <div th:if="${param.error}">
-            <div class="alert alert-danger float-left">E-mail e/ou senha inválido.</div>
+            <div class="alert alert-danger float-left">ID e/ou senha inválido.</div>
         </div>
 
         <div class="container my-box">
@@ -35,15 +35,15 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 col-lg-6">
-                    <h3>SISTEMA CONVERSOR DE INFORMAÇÃO EM ARQUIVO .JSON</h3>
+                    <h3>CSL - CONVERSOR DE DADOS PARA JSON</h3>
                     <p>A Comissão Setorial de Licitações do Corpo de Bombeiros Militar do Maranhão desenvolve suas atividades respeitando todos 
-                        os princípios básicos da licitação, assim o sistema visa promover a eficiência no desenvolvimento dos trabalhos, 
-                        realizando a conversão de informações em arquivo .JSON para ser enviado via sistema ao TCE-MA.
+                        os princípios básicos da licitação, assim o conversor visa promover a eficiência no desenvolvimento dos trabalhos, 
+                        realizando a conversão de dados em arquivo no formato JSON para ser enviado ao TCE-MA.
                     </p>
                 </div>
                 <div class="col-sm-12 col-lg-6">
                     <form id="form-login" th:action="@{/login}" th:method="POST">
-                        <input type="text" name="username" class="form-control mb-2" placeholder="Matrícula">
+                        <input type="text" name="username" autofocus autocomplete="on" class="form-control mb-2" placeholder="ID">
                         <input type="password" name="password" class="form-control mb-1" placeholder="Senha">
                         <a href="#" class="mb-4">Esqueci a senha</a>
                         <button type="submit" class="btn my-button btn-block mt-2">ENTRAR</button>
@@ -77,8 +77,7 @@
                     <p class="p-min">Versão 1.0</p>
                 </div>
                 <div class="col-6">
-                    <p class="float-right p-min">desenvolvido pelo Departamento de Tecnologia da Informação/DPM - <a href="http://www.italobrito.com.br"
-                            target="_blank">Capitão Aragão</a></p>
+                    <p class="float-right p-min">Desenvolvido pelo Departamento de Tecnologia da Informação/DPM - Capitão Aragão</p>
                 </div>
             </div>
         </div>
