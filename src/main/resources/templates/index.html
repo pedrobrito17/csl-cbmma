@@ -13,35 +13,20 @@
         <div class="alert alert-success" th:if="${msgSuccess}">
             <span th:utext="${msgSuccess}"></span>
         </div>
+        
+        <div class="alert alert-error" th:if="${msgError}">
+            <span th:utext="${msgError}"></span>
+        </div>
 
+        <div>
+            <img class="img-fluid" th:src="@{/img/txt_json.png}">
+        </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
+        <h6 class="text-center mt-5"> ESTA APLICAÇÃO FOI DESENVOLVIDA PARA REALIZAR A CONVERSÃO DE DADOS PARA ARQUIVO
+            JSON PERMITINDO QUE SEJA
+            ENVIADO AO TRIBUNAL DE CONTAS DO ESTADO DO MARANHÃO.
+        </h6>
     </main>
-
 </body>
 
 </html>

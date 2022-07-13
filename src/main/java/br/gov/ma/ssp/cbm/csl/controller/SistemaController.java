@@ -65,7 +65,7 @@ public class SistemaController{
         return mv;
     }  
 
-    @RequestMapping(value="/csl-unidade/gerar-json", method=RequestMethod.POST, consumes = {"application/json"}, produces = {"application/json"})
+    @RequestMapping(value="/csl-unidade/gerar-json", method=RequestMethod.POST, consumes = {"application/json"})
     public String gerarJson(@RequestBody Object json, Model model) {
         logger.info("############TESTANDO################");
         // logger.info(json.toString());

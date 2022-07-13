@@ -21,8 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="nomeCompleto"><span class="text-danger">*</span> Nome completo</label>
-                <input type="text" class="form-control" th:field="*{nomeCompleto}"
-                    placeholder="Ex: Jorge Miranda de Brito">
+                <input type="text" class="form-control" th:field="*{nomeCompleto}" readonly>
             </div>
 
             <div class="row">
@@ -30,14 +29,13 @@
                     <div class="form-group">
                         <label for="idFuncional"><span class="text-danger">*</span> Número da identidade
                             funcional</label>
-                        <input type="text" th:field="*{numIdFuncional}" class="form-control"
-                            placeholder="Ex: 2189 (apenas 4 dígitos)">
+                        <input type="text" th:field="*{numIdFuncional}" class="form-control" readonly>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="matricula"><span class="text-danger">*</span> Matrícula</label>
-                        <input type="text" th:field="*{matricula}" class="form-control" placeholder="Ex: 419278-0">
+                        <input type="text" th:field="*{matricula}" class="form-control" readonly>
                     </div>
                 </div>
             </div>
@@ -67,13 +65,16 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="quadro"><span class="text-danger">*</span> Quadro</label>
-                        <select th:field="*{quadro}" class="form-control">
-                            <option value="QPBM">QPBM</option>
-                            <option value="QOCBM">QOCBM</option>
-                            <option value="QOABM">QOABM</option>
-                            <option value="QOEBM">QOEBM</option>
-                            <option value="QOSBM">QOSBM</option>
-                        </select>
+                        <input type="text" th:field="*{quadro}" class="form-control" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="nomeGuerra"><span class="text-danger">*</span> Nome de guerra</label>
+                        <input type="text" th:field="*{nomeGuerra}" class="form-control" placeholder="Ex: J. Miranda">
                     </div>
                 </div>
             </div>
@@ -81,18 +82,14 @@
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
-                        <label for="nomeGuerra"><span class="text-danger">*</span> Nome de guerra</label>
-                        <input type="text" th:field="*{nomeGuerra}" class="form-control" placeholder="Ex: J. Miranda">
+                        <label for="localTrabalho"><span class="text-danger">*</span> Unidade</label>
+                        <input type="text" th:field="*{localTrabalho}" class="form-control" readonly>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
-                        <label for="localTrabalho"><span class="text-danger">*</span> Local de
-                            trabalho</label>
-                        <select class="form-control" th:field="*{localTrabalho}">
-                            <option value="Gabinete do comando">Gabinete do comando</option>
-                            <option value="2bbm">2º Batalhão de Bombeiros Militar</option>
-                        </select>
+                        <label for="municipioUnidade"><span class="text-danger">*</span> Município da Unidade</label>
+                        <input type="text" th:field="*{municipioUnidade}" class="form-control" readonly>
                     </div>
                 </div>
             </div>

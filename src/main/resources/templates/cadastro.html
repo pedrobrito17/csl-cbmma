@@ -31,13 +31,14 @@
             <div class="row">
                 <div class="col-sm-12 col-md-8 offset-md-2">
                     <h4>Complete o formulário</h4>
-                    <form class="my-box mt-3" id="form-cadastro" th:method="POST" th:action="@{/cadastrar-novo-bombeiro}" th:object="${bombeiro}">
+                    <form class="my-box mt-3" id="form-cadastro" th:method="POST"
+                        th:action="@{/cadastrar-novo-bombeiro}" th:object="${bombeiro}">
                         <div class="campo-obrigatorio">
                             <p class="float-right"><span class="text-danger">*</span> Campos obrigatórios</p>
                         </div>
                         <div class="form-group">
                             <label for="nomeCompleto"><span class="text-danger">*</span> Nome completo</label>
-                            <input type="text" class="form-control"  th:field="*{nomeCompleto}" 
+                            <input type="text" class="form-control" th:field="*{nomeCompleto}"
                                 placeholder="Ex: Jorge Miranda de Brito">
                         </div>
 
@@ -96,20 +97,56 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-sm-12 col-md-6">
+                            <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="nomeGuerra"><span class="text-danger">*</span> Nome de guerra</label>
                                     <input type="text" th:field="*{nomeGuerra}" class="form-control"
                                         placeholder="Ex: J. Miranda">
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="row">
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
-                                    <label for="localTrabalho"><span class="text-danger">*</span> Local de
-                                        trabalho</label>
+                                    <label for="localTrabalho"><span class="text-danger">*</span> Unidade</label>
                                     <select class="form-control" th:field="*{localTrabalho}">
-                                        <option value="Gabinete do comando">Gabinete do comando</option>
-                                        <option value="2bbm">2º Batalhão de Bombeiros Militar</option>
+                                        <option value="Batalhão de Bombeiros Militar">Batalhão de Bombeiros Militar
+                                        </option>
+                                        <option value="Companhia Independete de Bombeiros Militar">Companhia Independete
+                                            de Bombeiros Militar</option>
+                                        <option value="Colégio Militar 2 de Julho">Colégio Militar 2 de Julho</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="municipioUnidade"><span class="text-danger">*</span> Município da
+                                        Unidade</label>
+                                    <select class="form-control" th:field="*{municipioUnidade}">
+                                        <option value="Açailândia">Açailândia</option>
+                                        <option value="Bacabal">Bacabal</option>
+                                        <option value="Balsas">Balsas</option>
+                                        <option value="Barra do Corda">Barra do Corda</option>
+                                        <option value="Barreirinhas">Barreirinhas</option>
+                                        <option value="Carolina">Carolina</option>
+                                        <option value="Chapadinha">Chapadinha</option>
+                                        <option value="Caxias">Caxias</option>
+                                        <option value="Codó">Codó</option>
+                                        <option value="Estreito">Estreito</option>
+                                        <option value="Imperatriz">Imperatriz</option>
+                                        <option value="Itapecuru-Mirim">Itapecuru-Mirim</option>
+                                        <option value="Grajaú">Grajaú</option>
+                                        <option value="Paço do Lumiar">Paço do Lumiar</option>
+                                        <option value="Pinheiro">Pinheiro</option>
+                                        <option value="Santa Inês">Santa Inês</option>
+                                        <option value="São José de Ribamar">São José de Ribamar</option>
+                                        <option value="São Luís">São Luís</option>
+                                        <option value="Timon">Timon</option>
+                                        <option value="Trizidela do Vale">Trizidela do Vale</option>
+                                        <option value="Tuntum">Tuntum</option>
+                                        <option value="Tutóia">Tutóia</option>
+                                        <option value="Viana">Viana</option>
                                     </select>
                                 </div>
                             </div>
@@ -117,7 +154,8 @@
 
                         <div class="form-group">
                             <label for="celular"><span class="text-danger">*</span> Celular</label>
-                            <input type="text" th:field="*{celular}" class="form-control" placeholder="Ex: (98) 98200-5459">
+                            <input type="text" th:field="*{celular}" class="form-control"
+                                placeholder="Ex: (98) 98200-5459">
                         </div>
 
                         <div class="row">
@@ -132,7 +170,8 @@
                                 <div class="form-group">
                                     <label for="confEmail"><span class="text-danger">*</span> Confirmação de
                                         e-mail</label>
-                                    <input type="email" id="confEmail" name="confEmail" class="form-control" placeholder="Ex: jorge@gmail.com">
+                                    <input type="email" id="confEmail" name="confEmail" class="form-control"
+                                        placeholder="Ex: jorge@gmail.com">
                                 </div>
                             </div>
                         </div>
@@ -141,7 +180,8 @@
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label for="senha"><span class="text-danger">*</span> Senha</label>
-                                    <input type="password" th:field="*{senha}" class="form-control" placeholder="********">
+                                    <input type="password" th:field="*{senha}" class="form-control"
+                                        placeholder="********">
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
@@ -161,40 +201,45 @@
             </div>
         </div>
     </main>
-    
+
+
+
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-6 footer-cad">
-                    <p class="p-min">Dúvidas e sugestões? <a href="#" data-toggle="modal" data-target="#modalContatoCenter">Entre em contato</a></p>
+                    <p class="p-min">Dúvidas e sugestões? <a href="#" data-toggle="modal"
+                            data-target="#modalContatoCenter">Entre em contato</a></p>
                 </div>
                 <div class="col-6 footer-cad">
-                    <p class="position-absolute p-min" style="right:0px;">Desenvolvido pelo Departamento de Tecnologia da Informação/DPM - Capitão Aragão</p>
+                    <p class="position-absolute p-min" style="right:0px;">Desenvolvido pelo Departamento de Tecnologia
+                        da Informação/DPM - Capitão Aragão</p>
                 </div>
             </div>
         </div>
     </footer>
 
-      <!-- Modal -->
-  <div class="modal fade" id="modalContatoCenter" tabindex="-1" role="dialog" aria-labelledby="modalContatoCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalContatoLongTitle">Entre em contato</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <!-- Modal -->
+    <div class="modal fade" id="modalContatoCenter" tabindex="-1" role="dialog"
+        aria-labelledby="modalContatoCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalContatoLongTitle">Entre em contato</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Para dúvidas e sugestões entre em contato com o Capitão Aragão.<br>
+                    Contato: (98) 98204-5453 / aragao@cbm.ma.gov.br
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          Para dúvidas e sugestões entre em contato com o Capitão Aragão.<br>
-          Contato: (98) 98204-5453 / aragao@cbm.ma.gov.br
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        </div>
-      </div>
     </div>
-  </div>
 
     <script th:src="@{/js/jquery-3.3.1.min.js}"></script>
     <script th:src="@{/js/jquery.mask.min.js}"></script>
