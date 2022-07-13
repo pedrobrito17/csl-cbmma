@@ -3,7 +3,10 @@
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default/sistema-default}">
 
 <head>
-</head>
+    <script>
+        window.onload = function () { $('footer').css('position', 'static'); } 
+    </script>
+</head>>
 
 <body>
     <main layout:fragment="conteudo">
@@ -233,23 +236,14 @@
                     <div class="form-group">
                         <label for="edital_html"><span class="text-danger">*</span>edital_html</label>
                         <textarea type="text" class="form-control" rows="10">
-                        
                         </textarea>
                     </div>
                 </div>
             </div>
             <button type="submit" class="btn my-button btn-block mt-2 mb-2">GERAR JSON</button>
-
-
-
         </form>
-
-
-        <script th:src="@{/js/jquery-ui.min.js}"></script>
-        <script th:src="@{/js/datepicker-custom.js}"></script>
-
     </main>
 
-</body>
 
+</body>
 </html>

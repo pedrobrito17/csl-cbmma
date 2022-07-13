@@ -90,12 +90,12 @@ footer {
     bottom: 0px;
   }
 }
-@media only screen and (max-height: 899px) {
+/* @media only screen and (max-height: 1500px) {
   footer {
     margin-top: 50px;
     position: static;
   }
-}
+} */
 footer .footer-cad {
   height: 50px;
   display: flex;
