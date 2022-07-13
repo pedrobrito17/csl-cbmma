@@ -2,14 +2,19 @@ package br.gov.ma.ssp.cbm.csl.controller;
 
 import javax.annotation.Resource;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import br.gov.ma.ssp.cbm.csl.model.BombeiroMilitar;
 import br.gov.ma.ssp.cbm.csl.service.BombeiroMilitarService;
 
@@ -18,6 +23,8 @@ public class SistemaController{
 
     @Autowired
     private BombeiroMilitarService bombeiroService;
+
+    org.slf4j.Logger logger = LoggerFactory.getLogger(SistemaController.class);
 
     @Resource(name = "getBombeiroLogado")
     private BombeiroMilitar bombeiro;
@@ -53,10 +60,37 @@ public class SistemaController{
     }
 
     @RequestMapping(value="/csl-unidade/procedimento", method=RequestMethod.GET)
-    public String pagerProcedimento() {
+    public ModelAndView pagerProcedimento() {
+        ModelAndView mv = new ModelAndView("/conversor/procedimento");
+        return mv;
+    }  
+
+    @RequestMapping(value="/csl-unidade/gerar-json", method=RequestMethod.POST, consumes = {"application/json"}, produces = {"application/json"})
+    public String gerarJson(@RequestBody Object json, Model model) {
+        logger.info("############TESTANDO################");
+        // logger.info(json.toString());
+
+        model.addAttribute("message", "Arquivo enviado");
         return "conversor/procedimento";
     }  
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @RequestMapping(value="/csl-unidade/resultado", method=RequestMethod.GET)
     public String pagerResultado() {
         return "conversor/resultado";
