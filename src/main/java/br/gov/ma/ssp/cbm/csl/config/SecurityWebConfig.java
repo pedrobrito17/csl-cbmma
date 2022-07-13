@@ -22,8 +22,8 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
     private static final String bombeiroQuery = "SELECT matricula, senha, ativo FROM bombeiro_militar WHERE matricula=?";
 
     private static final String rolesQuery = "SELECT u.matricula, r.role FROM bombeiro_militar u "
-                                + "INNER JOIN bombeiro_role br ON u.id=br.bombeiro_id "
-                                + "INNER JOIN role r ON br.role_id = r.id WHERE u.matricula=?";
+            + "INNER JOIN bombeiro_role br ON u.id=br.bombeiro_id "
+            + "INNER JOIN role r ON br.role_id = r.id WHERE u.matricula=?";
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
@@ -34,7 +34,7 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/img/**").permitAll()
                 .antMatchers("/public/**").permitAll()
                 .antMatchers("/resources/**").permitAll()
-                .antMatchers("/cadastro").permitAll()              
+                .antMatchers("/cadastro").permitAll()
                 .antMatchers("/cadastrar-novo-bombeiro").permitAll()
                 .antMatchers("/retorno").permitAll()
                 .antMatchers("/csl-central/**").hasAuthority("CSL_CENTRAL")
@@ -46,16 +46,18 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutSuccessUrl("/login?logout").permitAll();
+
+        httpSecurity.csrf().disable().formLogin();
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-            .jdbcAuthentication()
-            .usersByUsernameQuery(bombeiroQuery)
-            .authoritiesByUsernameQuery(rolesQuery)
-            .dataSource(dataSource)
-            .passwordEncoder(bCryptPasswordEncoder);
+                .jdbcAuthentication()
+                .usersByUsernameQuery(bombeiroQuery)
+                .authoritiesByUsernameQuery(rolesQuery)
+                .dataSource(dataSource)
+                .passwordEncoder(bCryptPasswordEncoder);
     }
-    
+
 }

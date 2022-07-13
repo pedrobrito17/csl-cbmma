@@ -6,6 +6,7 @@
     <script>
         window.onload = function () { $('footer').css('position', 'static'); } 
     </script>
+    <script th:src="@{/js/gerar-json.js}"></script>
 </head>>
 
 <body>
@@ -240,7 +241,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn my-button btn-block mt-2 mb-2">GERAR JSON</button>
+            <button type="button" class="btn my-button btn-block mt-2 mb-2" onclick="gerarJson()">GERAR JSON</button>
         </form>
     </main>
 
