@@ -1,8 +1,6 @@
 package br.gov.ma.ssp.cbm.csl.model;
 
-import java.util.List;
 import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -49,7 +47,11 @@ public class BombeiroMilitar {
 
     @Column
     @NotNull
-    private String localTrabalho;
+    private String localTrabalho;    
+    
+    @Column
+    @NotNull
+    private String municipioUnidade;
 
     @Column
     @NotNull
@@ -172,6 +174,14 @@ public class BombeiroMilitar {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public String getMunicipioUnidade(){
+        return this.municipioUnidade;
+    }
+
+    public void setMunicipioUnidade(String municipioUnidade){
+        this.municipioUnidade = municipioUnidade;
     }
 
 }
