@@ -12,7 +12,8 @@ function gerarJson() {
         dataType: "json",
     })
         .success(function (data) {
-            window.location='@Url.Action("Download","BaixarConta")?file='+retorno.FileGuid;
+            console.log(data);
+            //window.location='@Url.Action("Download","BaixarConta")?file='+retorno.FileGuid;
         })
         .done(function () {
             console.log("baixado");
