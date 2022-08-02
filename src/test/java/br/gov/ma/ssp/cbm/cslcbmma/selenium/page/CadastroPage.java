@@ -1,4 +1,4 @@
-package br.gov.ma.ssp.cbm.odonto.selenium.page;
+package br.gov.ma.ssp.cbm.cslcbmma.selenium.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

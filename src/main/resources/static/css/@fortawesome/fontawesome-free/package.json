@@ -2,7 +2,7 @@
   "_args": [
     [
       "@fortawesome/fontawesome-free",
-      "/home/pedro/Front-end/odonto-cbmma"
+      "/home/pedro/Front-end/cslcbmma-cbmma"
     ]
   ],
   "_from": "@fortawesome/fontawesome-free@latest",
@@ -37,7 +37,7 @@
   "_shasum": "1aa5c59efb1b8c6eb6277d1e3e8c8f31998b8c8e",
   "_shrinkwrap": null,
   "_spec": "@fortawesome/fontawesome-free",
-  "_where": "/home/pedro/Front-end/odonto-cbmma",
+  "_where": "/home/pedro/Front-end/cslcbmma-cbmma",
   "author": {
     "email": "dave@fontawesome.com",
     "name": "Dave Gandy",

@@ -10,47 +10,6 @@
 
         <h2 id="titulo-page" class="mb-4">USUÁRIOS CADASTRADOS</h2>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <table class="table table-sm table-striped table-responsive-sm">
-                    <thead>
-                        <tr>
-                            <th>Cargo</th>
-                            <th>Nome</th>
-                            <th>Unidade</th>
-                            <th>Município da Unidade</th>
-                            <th>Senha</th>
-                            <th>Ativo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="bombeiro, var : ${bombeiros}">
-                            <td th:text="${bombeiro.cargo}"></td>
-                            <td th:text="${bombeiro.nomeGuerra}"></td>
-                            <td th:text="${bombeiro.localTrabalho}"></td>
-                            <td th:text="${bombeiro.municipioUnidade}"></td>
-                            <td>
-                                <a class="btn btn-danger btn-sm text-white" title="Resetar senha"
-                                    th:href="@{/csl-central/resetar-senha/{id}(id=${bombeiro.id})}">
-                                    Reset
-                                </a>
-                            </td>
-                            <td>
-                                <a class="btn btn-primary btn-sm text-white" title="Tornar usuário ativo"
-                                    th:href="@{/csl-central/ativo/{id}(id=${bombeiro.id})}">
-                                    <i class="far fa-check-circle"></i>
-                                </a>
-                            </td>
-
-                        </tr>
-                    </tbody>
-
-
-                </table>
-            </div>
-
-        </div>
-
     </main>
 
 </body>

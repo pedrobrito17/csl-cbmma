@@ -1,4 +1,4 @@
-package br.gov.ma.ssp.cbm.odonto.selenium;
+package br.gov.ma.ssp.cbm.cslcbmma.selenium;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import br.gov.ma.ssp.cbm.odonto.selenium.page.LoginPage;
+import br.gov.ma.ssp.cbm.cslcbmma.selenium.page.LoginPage;
 
 public class LoginTest{
 
@@ -16,7 +16,7 @@ public class LoginTest{
 
     @Before
     public void setup(){
-        System.setProperty("webdriver.chrome.driver", "/home/pedro/Github/odonto/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/pedro/Github/cslcbmma/chromedriver");
         driver = new ChromeDriver();
         driver.get("http://localhost:8080");
         loginPage = new LoginPage(driver);

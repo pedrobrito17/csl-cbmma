@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.gov.ma.ssp.cbm</groupId>
-	<artifactId>odonto</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<artifactId>cslcbmma</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>CSL - CBMMA</name>
+	<description>Projeto desenvolvido para CSL do CBMMA</description>
 
 	<properties>
 		<java.version>1.8</java.version>
