@@ -13,21 +13,17 @@ function download() {
         "id_contratacao": getValor('id_contratacao'),
         "numero": getValor('numero'),
         "ano": getValor('ano'),
-        "valor": getValor('valor'),
-        "data_inicio": getValor('data_inicio'),
-        "data_fim": getValor('data_fim'),
-        "ata_html": getValor('ata_html'),
+        "cnpj_ug": getValor('cnpj_ug'),
+        "perfil": getValor('perfil'),
     };
 
     var blob = new Blob([JSON.stringify(json, null, 4)], { type: 'application/json; charset=utf-8"' });
-    saveAs(blob, "ata_registro.json");
+    saveAs(blob, "cadastro_orgao.json");
 }
 
 $(document).ready(function () {
     $('#ano').mask('0000');
-    $('#data_inicio').mask('0000-00-00', { placeholder: "AAAA-MM-DD" });
-    $('#data_fim').mask('0000-00-00', { placeholder: "AAAA-MM-DD" });
-    $('#valor').mask("###0.00", {reverse: true});
+    $('#cnpj_ug').mask('00000000000000');
 });
 
 $(function () {
@@ -46,20 +42,13 @@ $(function () {
                 required: true,
                 minlength: 4
             },
-            valor: {
+            cnpj_ug: {
                 required: true,
-            },
-            data_inicio: {
-                required: true,
-                minlength: 10
-            },            
-            data_fim: {
-                required: true,
-                minlength: 10
-            },            
-            ata_html: {
-                required: true,
-            },
+                minlength: 14
+            }, 
+            perfil: {
+                required: true
+            }
         },
         submitHandler: function (form) {
             download();

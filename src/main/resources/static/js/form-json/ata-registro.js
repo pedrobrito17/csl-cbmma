@@ -20,7 +20,7 @@ function download() {
     };
 
     var blob = new Blob([JSON.stringify(json, null, 4)], { type: 'application/json; charset=utf-8"' });
-    saveAs(blob, "ataregistro.json");
+    saveAs(blob, "ata_registro.json");
 }
 
 $(document).ready(function () {

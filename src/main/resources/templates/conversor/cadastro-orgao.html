@@ -3,6 +3,8 @@
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default/sistema-default}">
 
 <head>
+    <th:block th:replace="default/elementos :: script"></th:block>
+    <script th:src="@{/js/form-json/cadastro-orgao.js}"></script>
 </head>
 
 <body>
@@ -10,6 +12,55 @@
 
         <h2 id="titulo-page" class="mb-4">CADASTRO ÓRGÃO</h2>
 
+        <form class="mt-3" id="form-json" method="GET">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="id_contratacao"><span class="text-danger">*</span>id_contratacao</label>
+                        <input type="text" class="form-control" name="id_contratacao" id="id_contratacao">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="numero"><span class="text-danger">*</span>numero</label>
+                        <input type="text" class="form-control" name="numero" id="numero">
+                    </div>
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="ano"><span class="text-danger">*</span>ano</label>
+                        <input type="text" class="form-control" name="ano" id="ano">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="cnpj_ug"><span class="text-danger">*</span>cnpj_ug</label>
+                        <input type="text" class="form-control" name="cnpj_ug" id="cnpj_ug">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="perfil"><span class="text-danger">*</span>perfil</label>
+                        <select name="perfil" id="perfil" class="form-control">
+                            <option value="" disabled selected></option>
+                            <option value="G">Gerenciador</option>
+                            <option value="P">Participante</option>
+                            <option value="N">Não participante</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn my-button btn-block mt-2 mb-2">GERAR JSON</button>
+        </form>
     </main>
 
 </body>
