@@ -82,8 +82,8 @@
                                         class="fa fa-file-text-o"></i> CADASTRO ÓRGÃO</a>
                             </li>
                             <li>
-                                <a th:href="@{/csl-unidade/cadastro-cliente}" id="cadastro_cliente"> <i
-                                        class="fa fa-file-text-o"></i> CADASTRO CLIENTE</a>
+                                <a th:href="@{/csl-unidade/cadastro-licitante}" id="cadastro_licitante"> <i
+                                        class="fa fa-file-text-o"></i> CADASTRO LICITANTE</a>
                             </li>
                             <li>
                                 <a th:href="@{/csl-unidade/contrato}" id="contrato"> <i class="fa fa-file-text-o"></i>
@@ -126,26 +126,7 @@
         </div>
     </footer>
   
-  <!-- Modal -->
-  <div class="modal fade" id="modalContatoCenter" tabindex="-1" role="dialog" aria-labelledby="modalContatoCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalContatoLongTitle">Entre em contato</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Para dúvidas e sugestões entre em contato com o Capitão Aragão.<br>
-          Contato: (98) 98204-5453 / aragao@cbm.ma.gov.br
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+    <th:block th:replace="default/elementos :: modal-contato"></th:block>
 
 </body>
 

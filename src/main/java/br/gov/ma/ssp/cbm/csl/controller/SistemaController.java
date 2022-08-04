@@ -83,9 +83,9 @@ public class SistemaController {
         return "conversor/cadastro-orgao";
     }
 
-    @RequestMapping(value = "/csl-unidade/cadastro-cliente", method = RequestMethod.GET)
+    @RequestMapping(value = "/csl-unidade/cadastro-licitante", method = RequestMethod.GET)
     public String pageCadastroCliente() {
-        return "conversor/cadastro-cliente";
+        return "conversor/cadastro-licitante";
     }
 
     @RequestMapping(value = "/csl-unidade/contrato", method = RequestMethod.GET)
