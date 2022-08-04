@@ -4,14 +4,10 @@
 
 <head>
     <script>
-        window.onload = function () { $('footer').css('position', 'static'); } 
+        window.onload = function () { $('footer').css('position', 'static'); $('footer').css('margin-top', '20px');} 
     </script>
-        <script th:src="@{/js/jquery.mask.min.js}"></script>
-        <script th:src="@{/js/additional-methods.min.js}"></script>
-        <script th:src="@{/js/jquery.validate.min.js}"></script>
-        <script th:src="@{/js/file-saver.min.js}"></script>
-        <script th:src="@{/js/form-json/procedimento.js}"></script>
-
+    <th:block th:replace="default/elementos :: script"></th:block>
+    <script th:src="@{/js/form-json/procedimento.js}"></script>
 </head>>
 
 <body>

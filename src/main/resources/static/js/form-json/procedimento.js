@@ -43,13 +43,11 @@ $(document).ready(function () {
     $('#ano_procedimento').mask('0000');
     $('#ano_lei').mask('0000');
     $('#numero_lei').mask('000000');
-    $('#valor_estimado').mask('00,0');
-    $('#data_publicacao').mask('0000/00/00', {placeholder: "AAAA/MM/DD"});
-    $('#data_adesao').mask('0000/00/00', {placeholder: "AAAA/MM/DD"});
-    $('#data_sessao').mask('0000/00/00', {placeholder: "AAAA/MM/DD"});
+    $('#valor_estimado').mask("###0.00", {reverse: true});
+    $('#data_publicacao').mask('0000-00-00', {placeholder: "AAAA-MM-DD"});
+    $('#data_adesao').mask('0000-00-00', {placeholder: "AAAA-MM-DD"});
+    $('#data_sessao').mask('0000-00-00', {placeholder: "AAAA-MM-DD"});
     $('#cpf_autoridade').mask('00000000000');
-
-
 });
 
 $(function () {
@@ -87,6 +85,15 @@ $(function () {
             ano_lei: {
                 required: true,
                 minlength: 4
+            },             
+            data_adesao: {
+                minlength: 10
+            },  
+            data_publicacao: {
+                minlength: 10
+            },              
+            data_sessao: {
+                minlength: 10
             },            
             cod_procedimento: {
                 required: true,
@@ -103,15 +110,10 @@ $(function () {
             cpf_autoridade: {
                 required: true,
             },            
-
-            
-
         },
         submitHandler: function(form){
             download();
         }
-
     });
-
     $.validator.messages.required = 'Campo obrigatório';
 });
