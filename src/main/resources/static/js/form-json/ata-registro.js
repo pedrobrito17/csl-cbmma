@@ -12,8 +12,8 @@ function download() {
     var json = {
         "id_contratacao": getValor('id_contratacao'),
         "numero": getValor('numero'),
-        "ano": getValor('ano'),
-        "valor": getValor('valor'),
+        "ano": parseInt(getValor('ano')),
+        "valor": parseFloat(getValor('valor')),
         "data_inicio": getValor('data_inicio'),
         "data_fim": getValor('data_fim'),
         "ata_html": getValor('ata_html'),

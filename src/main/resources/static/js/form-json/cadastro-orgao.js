@@ -12,7 +12,7 @@ function download() {
     var json = {
         "id_contratacao": getValor('id_contratacao'),
         "numero": getValor('numero'),
-        "ano": getValor('ano'),
+        "ano": parseInt(getValor('ano')),
         "cnpj_ug": getValor('cnpj_ug'),
         "perfil": getValor('perfil'),
     };

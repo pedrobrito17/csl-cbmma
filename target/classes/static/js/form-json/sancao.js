@@ -11,23 +11,26 @@ function getValor(text) {
 function download() {
     var json = {
         "id_contratacao": getValor('id_contratacao'),
-        "numero": getValor('numero'),
-        "ano": parseInt(getValor('ano')),
-        "valor": parseFloat(getValor('valor')),
+        "id_contrato": getValor('id_contrato'),
+        "cpf_cnpj": getValor('cpf_cnpj'),
+        "tipo": parseInt(getValor('tipo')),
+        "numero_lei": parseInt(getValor('numero_lei')),
+        "ano_lei": parseInt(getValor('ano_lei')),
+        "data_notificacao": getValor('data_notificacao'),
         "data_inicio": getValor('data_inicio'),
         "data_fim": getValor('data_fim'),
-        "ata_html": getValor('ata_html'),
+        "amplitude": getValor('amplitude'),
     };
-
     var blob = new Blob([JSON.stringify(json, null, 4)], { type: 'application/json; charset=utf-8"' });
-    saveAs(blob, "ata_registro.json");
+    saveAs(blob, "sancao.json");
 }
 
 $(document).ready(function () {
-    $('#ano').mask('0000');
+    $('#data_notificacao').mask('0000-00-00', { placeholder: "AAAA-MM-DD" });
     $('#data_inicio').mask('0000-00-00', { placeholder: "AAAA-MM-DD" });
     $('#data_fim').mask('0000-00-00', { placeholder: "AAAA-MM-DD" });
-    $('#valor').mask("###0.00", {reverse: true});
+    $('#numero_lei').mask('000000');
+    $('#ano_lei').mask('0000');
 });
 
 $(function () {
@@ -38,28 +41,37 @@ $(function () {
                 required: true,
                 maxlength: 11
             },
-            numero: {
-                required: true,
-                maxlength: 10
+            id_contrato: {
+                maxlength: 11
             },
-            ano: {
+            cpf_cnpj:{
                 required: true,
-                minlength: 4
+                maxlength: 14
             },
-            valor: {
+            tipo:{
+                required: true
+            },      
+            numero_lei:{
                 required: true,
+                maxlength: 6
+            },      
+            ano_lei:{
+                required: true,
+                maxlength: 4
+            },
+            data_notificacao: {
+                required: true,
+                minlength: 10
             },
             data_inicio: {
-                required: true,
                 minlength: 10
-            },            
-            data_fim: {
-                required: true,
-                minlength: 10
-            },            
-            ata_html: {
-                required: true,
             },
+            data_fim: {
+                minlength: 10
+            },
+            amplitude:{
+                required: true
+            }
         },
         submitHandler: function (form) {
             download();

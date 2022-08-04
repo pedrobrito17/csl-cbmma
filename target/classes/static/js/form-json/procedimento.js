@@ -13,25 +13,24 @@ function download() {
         "cnpj_ug": getValor('cnpj_ug'),
         "id_contratacao": getValor('id_contratacao'),
         "numero_processo": getValor('numero_processo'),
-        "ano_processo": getValor('ano_processo'),
-        "numero_procedimento": getValor('numero_processo'),
-        "ano_procedimento": getValor('ano_processo'),
+        "ano_processo": parseInt(getValor('ano_processo')),
+        "numero_procedimento": parseInt(getValor('numero_processo')),
+        "ano_procedimento": parseInt(getValor('ano_processo')),
         "data_publicacao": getValor('data_publicacao'),
-        "numero_lei": getValor('numero_lei'),
-        "ano_lei": getValor('ano_lei'),
+        "numero_lei": parseInt(getValor('numero_lei')),
+        "ano_lei": parseInt(getValor('ano_lei')),
         "cod_procedimento": getValor('cod_procedimento'),
-        "criterio": getValor('criterio'),
-        "finalidade": getValor('finalidade'),
+        "criterio": parseInt(getValor('criterio')),
+        "finalidade": parseInt(getValor('finalidade')),
         "sistema_pregao": getValor('sistema_pregao'),
         "data_adesao": getValor('data_adesao'),
-        "regime_execucao": getValor('regime_execucao'),
+        "regime_execucao": parseInt(getValor('regime_execucao')),
         "objeto": getValor('objeto'),
-        "valor_estimado": getValor('valor_estimado'),
+        "valor_estimado": parseFloat(getValor('valor_estimado')),
         "data_sessao": getValor('data_sessao'),
         "cpf_autoridade": getValor('cpf_autoridade'),
-        "edital_html": getValor('edital_html')
+        "contrato_html": getValor('contrato_html')
     };
-
     var blob = new Blob([JSON.stringify(json, null, 4)], { type: 'application/json; charset=utf-8"' });
     saveAs(blob, "procedimento.json");
 }

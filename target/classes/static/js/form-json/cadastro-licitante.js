@@ -14,7 +14,7 @@ function download() {
         "estrangeiro": getValor('estrangeiro'),
         "cpf_cnpj": getValor('cpf_cnpj'),
         "numero": getValor('numero'),
-        "ano": getValor('ano'),
+        "ano": parseInt(getValor('ano')),
     };
 
     var blob = new Blob([JSON.stringify(json, null, 4)], { type: 'application/json; charset=utf-8"' });

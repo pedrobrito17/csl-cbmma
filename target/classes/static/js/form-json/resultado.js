@@ -13,9 +13,8 @@ function download() {
         "id_contratacao": getValor('id_contratacao'),
         "licitacao": getValor('licitacao'),
         "data": getValor('data'),
-        "valor": getValor('valor'),
+        "valor": parseFloat(getValor('valor')),
     };
-
     var blob = new Blob([JSON.stringify(json, null, 4)], { type: 'application/json; charset=utf-8"' });
     saveAs(blob, "resultado.json");
 }
