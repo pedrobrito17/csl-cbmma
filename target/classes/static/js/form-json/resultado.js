@@ -1,21 +1,8 @@
-function getValor(text) {
-    var dado = $("#" + text).val();
-    if (!dado) {
-        return null;
-    }
-    else {
-        return dado;
-    }
-}
+import { getValor } from "./utils/get-valor.js";
 
 function download() {
-    var json = {
-        "id_contratacao": getValor('id_contratacao'),
-        "licitacao": getValor('licitacao'),
-        "data": getValor('data'),
-        "valor": parseFloat(getValor('valor')),
-    };
-    var blob = new Blob([JSON.stringify(json, null, 4)], { type: 'application/json; charset=utf-8"' });
+    var json = {"id_contratacao": getValor('id_contratacao'),"licitacao": getValor('licitacao'),"data": getValor('data'),"valor": parseFloat(getValor('valor'))};
+    var blob = new Blob([JSON.stringify(json, null, 0)], { type: 'application/json; charset=utf-8"' });
     saveAs(blob, "resultado.json");
 }
 

@@ -1,25 +1,8 @@
-function getValor(text) {
-    var dado = $("#" + text).val();
-    if (!dado) {
-        return null;
-    }
-    else {
-        return dado;
-    }
-}
+import { getValor } from "./utils/get-valor.js";
 
 function download() {
-    var json = {
-        "id_contratacao": getValor('id_contratacao'),
-        "numero": getValor('numero'),
-        "ano": parseInt(getValor('ano')),
-        "valor": parseFloat(getValor('valor')),
-        "data_inicio": getValor('data_inicio'),
-        "data_fim": getValor('data_fim'),
-        "ata_html": getValor('ata_html'),
-    };
-
-    var blob = new Blob([JSON.stringify(json, null, 4)], { type: 'application/json; charset=utf-8"' });
+    var json = {"id_contratacao": getValor('id_contratacao'),"numero": getValor('numero'),"ano": parseInt(getValor('ano')),"valor": parseFloat(getValor('valor')),"data_inicio": getValor('data_inicio'),"data_fim": getValor('data_fim'),"ata_html": getValor('ata_html')};
+    var blob = new Blob([JSON.stringify(json, null, 0)], { type: 'application/json; charset=utf-8"'});
     saveAs(blob, "ata_registro.json");
 }
 

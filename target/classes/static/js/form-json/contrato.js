@@ -1,32 +1,10 @@
-function getValor(text) {
-    var dado = $("#" + text).val();
-    if (!dado) {
-        return null;
-    }
-    else {
-        return dado;
-    }
-}
+import { getValor } from "./utils/get-valor.js";
+import { validarCPFeCNPJ } from "./utils/validar-cpf-cnpj.js";
+import { validarCNPJ } from "./utils/validar-cpf-cnpj.js";
 
 function download() {
-    var json = {
-        "cnpj_ug": getValor('cnpj_ug'),
-        "numero_processo": getValor('numero_processo'),
-        "ano_processo": parseInt(getValor('ano_processo')),
-        "numero_contrato": parseInt(getValor('numero_contrato')),
-        "ano_contrato": parseInt(getValor('ano_contrato')),
-        "id_contratacao": getValor('id_contratacao'),
-        "id_contrato": getValor('id_contrato'),
-        "cpf_cnpj": getValor('cpf_cnpj'),
-        "objeto": getValor('objeto'),
-        "tipo": parseInt(getValor('tipo')),
-        "data_assinatura": getValor('data_assinatura'),
-        "data_inicio": getValor('data_inicio'),
-        "data_fim": getValor('data_fim'),
-        "valor": parseFloat(getValor('valor')),
-        "contrato_html": getValor('contrato_html'),
-    };
-    var blob = new Blob([JSON.stringify(json, null, 4)], { type: 'application/json; charset=utf-8"'});
+    var json = {"cnpj_ug": getValor('cnpj_ug'),"numero_processo": getValor('numero_processo'),"ano_processo": parseInt(getValor('ano_processo')),"numero_contrato": parseInt(getValor('numero_contrato')),"ano_contrato": parseInt(getValor('ano_contrato')),"id_contratacao": getValor('id_contratacao'),"id_contrato": getValor('id_contrato'),"cpf_cnpj": getValor('cpf_cnpj'),"objeto": getValor('objeto'),"tipo": parseInt(getValor('tipo')),"data_assinatura": getValor('data_assinatura'),"data_inicio": getValor('data_inicio'),"data_fim": getValor('data_fim'),"valor": parseFloat(getValor('valor')),"contrato_html": getValor('contrato_html')};
+    var blob = new Blob([JSON.stringify(json, null, 0)], { type: 'application/json; charset=utf-8"'});
     saveAs(blob, "contrato.json");
 }
 
@@ -48,7 +26,8 @@ $(function () {
         rules: {
             cnpj_ug: {
                 required: true,
-                minlength: 14
+                minlength: 14,
+                verificadorCNPJ: true
             }, 
             numero_processo: {
                 required: true,
@@ -76,7 +55,8 @@ $(function () {
             },   
             cpf_cnpj: {
                 required: true,
-                maxlength: 14
+                maxlength: 14,
+                verificador: true
             },   
             objeto:{
                 required: true,
@@ -109,4 +89,10 @@ $(function () {
         }
     });
     $.validator.messages.required = 'Campo obrigatório';
+    $.validator.addMethod("verificadorCNPJ", function (value, element) {
+        return validarCNPJ(value);
+    }, "Digite um CNPJ válido");    
+    $.validator.addMethod("verificador", function (value, element) {
+        return validarCPFeCNPJ(value);
+    }, "Digite um CPF/CNPJ válido");
 });

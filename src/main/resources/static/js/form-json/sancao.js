@@ -1,27 +1,9 @@
-function getValor(text) {
-    var dado = $("#" + text).val();
-    if (!dado) {
-        return null;
-    }
-    else {
-        return dado;
-    }
-}
+import { validarCPFeCNPJ } from "./utils/validar-cpf-cnpj.js";
+import { getValor } from "./utils/get-valor.js";
 
 function download() {
-    var json = {
-        "id_contratacao": getValor('id_contratacao'),
-        "id_contrato": getValor('id_contrato'),
-        "cpf_cnpj": getValor('cpf_cnpj'),
-        "tipo": parseInt(getValor('tipo')),
-        "numero_lei": parseInt(getValor('numero_lei')),
-        "ano_lei": parseInt(getValor('ano_lei')),
-        "data_notificacao": getValor('data_notificacao'),
-        "data_inicio": getValor('data_inicio'),
-        "data_fim": getValor('data_fim'),
-        "amplitude": getValor('amplitude'),
-    };
-    var blob = new Blob([JSON.stringify(json, null, 4)], { type: 'application/json; charset=utf-8"' });
+    var json = { "id_contratacao": getValor('id_contratacao'), "id_contrato": getValor('id_contrato'), "cpf_cnpj": getValor('cpf_cnpj'), "tipo": parseInt(getValor('tipo')), "numero_lei": parseInt(getValor('numero_lei')), "ano_lei": parseInt(getValor('ano_lei')), "data_notificacao": getValor('data_notificacao'), "data_inicio": getValor('data_inicio'), "data_fim": getValor('data_fim'), "amplitude": getValor('amplitude') };
+    var blob = new Blob([JSON.stringify(json, null, 0)], { type: 'application/json; charset=utf-8"' });
     saveAs(blob, "sancao.json");
 }
 
@@ -31,6 +13,7 @@ $(document).ready(function () {
     $('#data_fim').mask('0000-00-00', { placeholder: "AAAA-MM-DD" });
     $('#numero_lei').mask('000000');
     $('#ano_lei').mask('0000');
+    $('#cpf_cnpj').mask('00000000000000');
 });
 
 $(function () {
@@ -44,18 +27,20 @@ $(function () {
             id_contrato: {
                 maxlength: 11
             },
-            cpf_cnpj:{
+            cpf_cnpj: {
                 required: true,
-                maxlength: 14
+                minlength: 11,
+                maxlength: 14,
+                verificador: true
             },
-            tipo:{
+            tipo: {
                 required: true
-            },      
-            numero_lei:{
+            },
+            numero_lei: {
                 required: true,
                 maxlength: 6
-            },      
-            ano_lei:{
+            },
+            ano_lei: {
                 required: true,
                 maxlength: 4
             },
@@ -69,7 +54,7 @@ $(function () {
             data_fim: {
                 minlength: 10
             },
-            amplitude:{
+            amplitude: {
                 required: true
             }
         },
@@ -78,4 +63,8 @@ $(function () {
         }
     });
     $.validator.messages.required = 'Campo obrigatório';
+    $.validator.addMethod("verificador", function (value, element) {
+        return validarCPFeCNPJ(value);
+    }, "Digite um CPF/CNPJ válido");
 });
+

@@ -1,23 +1,9 @@
-function getValor(text) {
-    var dado = $("#" + text).val();
-    if (!dado) {
-        return null;
-    }
-    else {
-        return dado;
-    }
-}
+import { validarCNPJ } from "./utils/validar-cpf-cnpj.js";
+import { getValor } from "./utils/get-valor.js";
 
 function download() {
-    var json = {
-        "id_contratacao": getValor('id_contratacao'),
-        "numero": getValor('numero'),
-        "ano": parseInt(getValor('ano')),
-        "cnpj_ug": getValor('cnpj_ug'),
-        "perfil": getValor('perfil'),
-    };
-
-    var blob = new Blob([JSON.stringify(json, null, 4)], { type: 'application/json; charset=utf-8"' });
+    var json = {"id_contratacao": getValor('id_contratacao'),"numero": getValor('numero'),"ano": parseInt(getValor('ano')),"cnpj_ug": getValor('cnpj_ug'),"perfil": getValor('perfil')};
+    var blob = new Blob([JSON.stringify(json, null, 0)], { type: 'application/json; charset=utf-8"' });
     saveAs(blob, "cadastro_orgao.json");
 }
 
@@ -44,7 +30,8 @@ $(function () {
             },
             cnpj_ug: {
                 required: true,
-                minlength: 14
+                minlength: 14,
+                verificador: true
             }, 
             perfil: {
                 required: true
@@ -55,4 +42,7 @@ $(function () {
         }
     });
     $.validator.messages.required = 'Campo obrigatório';
+    $.validator.addMethod("verificador", function (value, element) {
+        return validarCNPJ(value);
+    }, "Digite um CNPJ válido");
 });
