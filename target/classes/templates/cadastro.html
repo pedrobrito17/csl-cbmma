@@ -123,30 +123,7 @@
                                 <div class="form-group">
                                     <label for="municipioUnidade"><span class="text-danger">*</span> Município da
                                         Unidade</label>
-                                    <select class="form-control" th:field="*{municipioUnidade}">
-                                        <option value="Açailândia">Açailândia</option>
-                                        <option value="Bacabal">Bacabal</option>
-                                        <option value="Balsas">Balsas</option>
-                                        <option value="Barra do Corda">Barra do Corda</option>
-                                        <option value="Barreirinhas">Barreirinhas</option>
-                                        <option value="Carolina">Carolina</option>
-                                        <option value="Chapadinha">Chapadinha</option>
-                                        <option value="Caxias">Caxias</option>
-                                        <option value="Codó">Codó</option>
-                                        <option value="Estreito">Estreito</option>
-                                        <option value="Imperatriz">Imperatriz</option>
-                                        <option value="Itapecuru-Mirim">Itapecuru-Mirim</option>
-                                        <option value="Grajaú">Grajaú</option>
-                                        <option value="Paço do Lumiar">Paço do Lumiar</option>
-                                        <option value="Pinheiro">Pinheiro</option>
-                                        <option value="Santa Inês">Santa Inês</option>
-                                        <option value="São José de Ribamar">São José de Ribamar</option>
-                                        <option value="São Luís">São Luís</option>
-                                        <option value="Timon">Timon</option>
-                                        <option value="Trizidela do Vale">Trizidela do Vale</option>
-                                        <option value="Tuntum">Tuntum</option>
-                                        <option value="Tutóia">Tutóia</option>
-                                        <option value="Viana">Viana</option>
+                                    <select class="form-control" name="municipioUnidade" id="municipioUnidade">
                                     </select>
                                 </div>
                             </div>
@@ -224,6 +201,7 @@
     <script th:src="@{/js/jquery.validate.min.js}"></script>
     <script th:src="@{/js/form-validation.js}"></script>
     <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/cadastro.js}"></script>
 
 </body>
 

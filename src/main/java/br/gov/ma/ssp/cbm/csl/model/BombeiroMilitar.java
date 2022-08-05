@@ -66,7 +66,7 @@ public class BombeiroMilitar {
     private String senha;
 
     @Column
-    private int ativo = 1;
+    private int ativo = 0;
 
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinTable(name = "bombeiro_role", joinColumns = @JoinColumn(name = "bombeiro_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))

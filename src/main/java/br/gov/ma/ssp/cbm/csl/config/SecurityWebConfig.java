@@ -44,8 +44,11 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().loginPage("/login").usernameParameter("username").passwordParameter("password").permitAll()
                 .and()
+                .rememberMe()
+                .and()
                 .logout()
                 .logoutSuccessUrl("/login?logout").permitAll();
+                
 
         httpSecurity.csrf().disable().formLogin();
     }

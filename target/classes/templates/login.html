@@ -45,10 +45,12 @@
                 <div class="col-sm-12 col-lg-6">
                     <form id="form-login" th:action="@{/login}" th:method="POST">
                         <input type="text" name="username" autofocus autocomplete="on" class="form-control mb-2"
-                            placeholder="ID" value="419271-0">
-                        <input type="password" name="password" class="form-control mb-1" placeholder="Senha"
-                            value="fsadu1788">
-                        <a href="#" class="mb-4" data-toggle="modal" data-target="#modalContatoCenter">Esqueci a
+                            placeholder="ID">
+                        <input type="password" name="password" class="form-control mb-1" placeholder="Senha">
+                        <input type="checkbox" id="remember-me" name="remember-me" />
+                        <label for="remember-me">Lembrar?</label>
+                        <a href="#" class="mb-4 float-right" data-toggle="modal"
+                            data-target="#modalContatoCenter">Esqueci a
                             senha</a>
                         <button type="submit" class="btn my-button btn-block mt-2">ENTRAR</button>
                     </form>
