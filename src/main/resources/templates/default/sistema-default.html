@@ -48,22 +48,6 @@
                             <li>
                                 <a id="home" th:href="@{/}"> <i class="fas fa-home"></i> HOME</a>
                             </li>
-                            <li>
-                                <a id="meus-dados" th:href="@{/csl-unidade/meus-dados}"> <i
-                                        class="fas fa-user-circle"></i> MEUS
-                                    DADOS</a>
-                            </li>
-                            <li>
-                                <a id="alterar-senha" th:href="@{/csl-unidade/alterar-senha}"> <i
-                                        class="fas fa-sync-alt"></i> ALTERAR
-                                    SENHA</a>
-                            </li>
-                            <div sec:authorize="hasAuthority('CSL_CENTRAL')">
-                                <li>
-                                    <a id="usuarios-cadastrados" th:href="@{/csl-central/usuarios-cadastrados}"> <i
-                                            class="fa fa-user-friends"></i> USUÁRIOS CADASTRADOS</a>
-                                </li>
-                            </div>
                             <!-- Documento JSON -->
                             <li>
                                 <a th:href="@{/csl-unidade/procedimento}" id="procedimento"> <i
@@ -94,11 +78,6 @@
                                     SANÇÃO</a>
                             </li>
                             <!-- Documento JSON -->
-                            <li>
-                                <form id="form-sair" th:action="@{/logout}" th:method="POST">
-                                    <a id="sair"> <i class="fas fa-sign-out-alt"></i> SAIR</a>
-                                </form>
-                            </li>
                         </ul>
                     </div>
                 </div>
