@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default/sistema-default}">
+
+<head>
+    <script>
+        window.onload = function () { $('footer').css('position', 'static'); $('footer').css('margin-top', '20px');} 
+    </script>
+    <th:block th:replace="default/elementos :: script"></th:block>
+    <script th:src="@{/js/form-json/contrato.js}" type="module"></script>
+</head>
+
+<body>
+    <main layout:fragment="conteudo">
+
+        <h2 id="titulo-page" class="mb-4">CONTRATO</h2>
+
+        <form class="mt-3" id="form-json" method="GET">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="cnpj_ug"><span class="text-danger">*</span>cnpj_ug</label>
+                        <input type="text" class="form-control" name="cnpj_ug" id="cnpj_ug">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="numero_processo"><span class="text-danger">*</span>numero_processo</label>
+                        <input type="text" class="form-control" name="numero_processo" id="numero_processo">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="ano_processo"><span class="text-danger">*</span>ano_processo</label>
+                        <input type="text" class="form-control" name="ano_processo" id="ano_processo">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="numero_contrato"><span class="text-danger">*</span>numero_contrato</label>
+                        <input type="text" class="form-control" name="numero_contrato" id="numero_contrato">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="ano_contrato"><span class="text-danger">*</span>ano_contrato</label>
+                        <input type="text" class="form-control" name="ano_contrato" id="ano_contrato">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="id_contratacao"><span class="text-danger">*</span>id_contratacao</label>
+                        <input type="text" class="form-control" name="id_contratacao" id="id_contratacao">
+                    </div>
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="id_contrato"><span class="text-danger">*</span>id_contrato</label>
+                        <input type="text" class="form-control" name="id_contrato" id="id_contrato">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="cpf_cnpj"><span class="text-danger">*</span>cpf_cnpj</label>
+                        <input type="text" class="form-control" name="cpf_cnpj" id="cpf_cnpj">
+                    </div>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="objeto"><span class="text-danger">*</span>objeto</label>
+                        <input type="text" class="form-control" name="objeto" id="objeto">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="tipo"><span class="text-danger">*</span>tipo</label>
+                        <select name="tipo" id="tipo" class="form-control">
+                            <option value="" disabled selected></option>
+                            <option value="1">Contrato administrativo</option>
+                            <option value="2">Nota de empenho</option>
+                            <option value="3">Apostilamento</option>
+                            <option value="4">Subcontrato</option>
+                            <option value="5">Alteração Prazo</option>
+                            <option value="6">Alteração Valor - Revisão</option>
+                            <option value="7">Alteração Valor - Reajuste</option>
+                            <option value="8">Alteração Valor - Repactuação</option>
+                            <option value="9">Alteração Prazo e Valor</option>
+                            <option value="10">Alteração Qualitativa</option>
+                            <option value="11">Alteração Quantitativa</option>
+                            <option value="12">Rescisão Contratual</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="data_assinatura"><span class="text-danger">*</span>data_assinatura</label>
+                        <input type="text" class="form-control" name="data_assinatura" id="data_assinatura">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="data_inicio"><span class="text-danger">*</span>data_inicio</label>
+                        <input type="text" class="form-control" name="data_inicio" id="data_inicio">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="data_fim"><span class="text-danger">*</span>data_fim</label>
+                        <input type="text" class="form-control" name="data_fim" id="data_fim">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="valor"><span class="text-danger">*</span>valor</label>
+                        <input type="text" class="form-control" name="valor" id="valor">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="contrato_html"><span class="text-danger">*</span>contrato_html</label>
+                        <textarea type="text" class="form-control" rows="10" cols="100" name="contrato_html" id="contrato_html"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn my-button btn-block mt-2 mb-2">GERAR JSON</button>
+        </form>
+
+    </main>
+
+</body>
+
+</html>
