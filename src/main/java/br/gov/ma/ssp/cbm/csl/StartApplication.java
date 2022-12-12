@@ -2,19 +2,12 @@ package br.gov.ma.ssp.cbm.csl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class StartApplication extends SpringBootServletInitializer {
+public class StartApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StartApplication.class, args);
-	}
-
-	@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		 return application.sources(StartApplication.class);
 	}
 
 }
